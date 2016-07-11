@@ -4,6 +4,9 @@
 	MIT License http://www.opensource.org/licenses/mit-license.php
 	Author Tobias Koppers @sokra
 */
+process.stderr && process.stderr.isTTY && process.stderr._handle &&
+  process.stderr._handle.setBlocking && process.stderr._handle.setBlocking(true);
+
 var path = require("path");
 // Local version replace global one
 try {
